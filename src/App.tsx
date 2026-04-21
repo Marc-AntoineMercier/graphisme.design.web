@@ -1,11 +1,13 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
 
 export function App() {
 
   return (
     <>
-      <h1>Welcome to React with TypeScript!</h1>
-      <p>This is a simple React application using TypeScript.</p>
+      <Routes>
+        <Route path="/" element={<h1>Home</h1>} />
+      </Routes>
     </>
   )
 }
