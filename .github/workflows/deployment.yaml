@@ -31,9 +31,8 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
           path: ./build
 
       - name: Deploy to GitHub Pages
