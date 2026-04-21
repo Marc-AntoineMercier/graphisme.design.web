@@ -33,6 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v5
         with:
+          name: github-pages
           path: ./build
 
       - name: Deploy to GitHub Pages
