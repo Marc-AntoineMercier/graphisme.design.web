@@ -1,9 +1,5 @@
 
-export type HomePageProps = {
-
-}
-
-export function HomePage({}: HomePageProps) {
+export function HomePage() {
 
     return (
         <>

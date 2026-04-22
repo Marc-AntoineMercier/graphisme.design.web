@@ -1,9 +1,5 @@
 
-export type AboutPageProps = {
-
-}
-
-export function AboutPage({}: AboutPageProps) {
+export function AboutPage() {
     
     return (
         <>
