@@ -1,3 +1,3 @@
-export * from "./navbar";
-export * from "./footer";
-export * from "./logo";
+export * from "./navbar/navbar.component";
+export * from "./footer/footer.component";
+export * from "./logo/logo.component";

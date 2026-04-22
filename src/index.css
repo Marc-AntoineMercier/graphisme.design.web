@@ -1,0 +1,18 @@
+
+:root {
+    --app-font-size: 16px
+    font-family: 'Fira Code', monospace;
+    font-size: var(--app-foot-size);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
