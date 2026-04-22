@@ -1,7 +1,8 @@
+import { type DataGraveyard, getGraveyardData } from "@/utils";
 import { createContext, useContext, type ReactNode } from "react";
 
 export type AppContextType = {
-  data: string[]
+  data: DataGraveyard
 }
 
 const AppContext = createContext<AppContextType | null>(null)
@@ -11,10 +12,11 @@ type AppContextProviderProps = {
 }
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
-  const data = ["Item 1", "Item 2", "Item 3"];
+  const data = getGraveyardData();
   const value: AppContextType = {
     data
   }
+  
 
   return (
     <AppContext.Provider value={value}>
