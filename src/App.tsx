@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { HomePage, AboutPage, GraveyardPage, DetailGraveyardPage } from '@/pages';
 import { Navbar, Footer } from '@/components';
 
@@ -9,7 +9,8 @@ export function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate to={"/home"} replace={true} />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/graveyard" element={<GraveyardPage />} />
         <Route path="/graveyard/:id" element={<DetailGraveyardPage />}/>
