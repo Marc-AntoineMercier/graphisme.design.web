@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "type": "service",
+        "siteName": "Dark Web Reports",
+        "description": "Dark Web Reports is a service that provides comprehensive monitoring of the dark web for potential threats and data breaches. It offers real-time alerts and detailed reports to help organizations protect their sensitive information.",
+        "url": "//darkwebreports.com"
+    }
+]
