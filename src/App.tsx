@@ -1,18 +1,14 @@
 import './App.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import { HomePage, AboutPage } from '@/pages';
 
 export function App() {
 
   return (
     <>
       <Routes>
-        <Route path="/" element={
-          <>
-            <h1>Home</h1>
-            <Link to={"/about"}>To About</Link>
-          </>
-          } />
-        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   )
