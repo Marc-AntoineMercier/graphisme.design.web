@@ -1,0 +1,12 @@
+
+/* class for the navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: auto;
+    justify-content: space-between;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
