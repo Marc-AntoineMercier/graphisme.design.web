@@ -8,22 +8,24 @@ const options: OptionProps[] = [
     render: {
       openButton: "Navigation",
       closeButton: "Close",
-      content: <></>
-    }
+      content: <></>,
+    },
+    anchor: "left"
   },
   {
     render: {
       openButton: "Search",
       closeButton: "Close",
-      content: <></>
-    }
+      content: <></>,
+    },
   },
   {
     render: {
       openButton: "Profile",
       closeButton: "Close",
-      content: <></>
-    }
+      content: <></>,
+    },
+    anchor: "right"
   }
 ];
 

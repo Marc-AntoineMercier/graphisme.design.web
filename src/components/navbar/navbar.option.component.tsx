@@ -11,7 +11,7 @@ export function NavbarOption({ options }: NavbarOptionProps) {
     <>
       <div className="navbar-option">
         {options.map((option, index) => (
-          <Option key={index} render={option.render}/>
+          <Option key={index} render={option.render} anchor={option.anchor}  />
         ))}
       </div>
     </>

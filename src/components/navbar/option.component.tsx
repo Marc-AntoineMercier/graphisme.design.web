@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { Drawer } from "@mui/material";
+import { Drawer, type DrawerProps } from "@mui/material";
 
 export const useOptions = () => {
 	const [open, setOpen] = useState<boolean>(false);
@@ -15,15 +15,18 @@ export const useOptions = () => {
 	}
 }
 
+export type OptionsAnchor = DrawerProps["anchor"]
+
 export type OptionProps = {
   render: {
     openButton: ReactNode;
     closeButton: ReactNode;
-    "content": ReactNode;
-  }
+    content: ReactNode;
+  },
+	anchor?: OptionsAnchor;
 }
 
-export function Option({ render }: OptionProps) {
+export function Option({ render, anchor = "right" }: OptionProps) {
 	const { openButton, closeButton, content } = render;
   const { state, close, open } = useOptions();
 
@@ -32,7 +35,7 @@ export function Option({ render }: OptionProps) {
       <button type={"button"} onClick={open} >
         {openButton}
       </button>
-      <Drawer open={state} onClose={close} anchor={"right"}>
+      <Drawer open={state} onClose={close} anchor={anchor}>
         <div>
           <div>
             <button type={"button"} onClick={close}>
