@@ -1,3 +1,4 @@
+
 export type DeletedSiteType = "Service" | "App" | "Hardware" | "Other";
 export type DeletedSite = {
     id: number;
@@ -8,3 +9,4 @@ export type DeletedSite = {
 }
 
 export type DataGraveyard = DeletedSite[];
+
