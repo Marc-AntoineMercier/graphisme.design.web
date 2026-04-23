@@ -6,13 +6,6 @@ import { type OptionProps } from "./option.component";
 const options: OptionProps[] = [
   {
     render: {
-      openButton: "Navigation",
-      closeButton: "Close",
-      content: <></>,
-    }
-  },
-  {
-    render: {
       openButton: "Search",
       closeButton: "Close",
       content: <></>,
@@ -20,12 +13,11 @@ const options: OptionProps[] = [
   },
   {
     render: {
-      openButton: "Profile",
+      openButton: "Navigation",
       closeButton: "Close",
       content: <></>,
-    },
-    anchor: "right"
-  }
+    }
+  },
 ];
 
 export function Navbar() {
