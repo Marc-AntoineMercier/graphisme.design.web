@@ -9,8 +9,7 @@ const options: OptionProps[] = [
       openButton: "Navigation",
       closeButton: "Close",
       content: <></>,
-    },
-    anchor: "left"
+    }
   },
   {
     render: {
