@@ -1,6 +1,6 @@
-import { getCurrentYear } from "@/utils";
-import { FooterRessource } from "./ressource/footer.ressource.component";
-import type { FooterSectionRessourceProps } from "./ressource/footer.section.component";
+import { FooterInfo, type FooterIconProps, type FooterLinkProps } from "./info"
+import { FooterRessource, type FooterSectionRessourceProps } from "./ressource"
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const sections: FooterSectionRessourceProps[] = [
   {
@@ -31,14 +31,35 @@ const sections: FooterSectionRessourceProps[] = [
   }
 ]
 
+const links: FooterLinkProps[] = [
+  {
+    "label": "Privacy Policy",
+    "to": "/privacy"
+  },
+  {
+    "label": "Terms of Service",
+    "to": "/terms"
+  }
+]
+
+const icons: FooterIconProps[] = [
+  {
+    "to": "https://www.facebook.com",
+    "icon": <InstagramIcon />
+  },
+  {
+    "to": "https://www.twitter.com",
+    "icon": <InstagramIcon />
+  }
+]
+
 export function Footer() {
-  const currentYear = getCurrentYear();
 
   return (
     <>
       <footer>
         <FooterRessource sections={sections}/>
-        <p>&copy; {currentYear} My React App. All rights reserved.</p>
+        <FooterInfo icons={icons} links={links} />
       </footer>
     </>
   )
