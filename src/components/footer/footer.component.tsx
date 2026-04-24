@@ -2,7 +2,7 @@ import { FooterInfo, type FooterIconProps, type FooterLinkProps } from "./info"
 import { FooterRessource, type FooterSectionRessourceProps } from "./ressource"
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-const sections: FooterSectionRessourceProps[] = [
+export const sections: FooterSectionRessourceProps[] = [
   {
     "title": "Company",
     "links": [
@@ -29,9 +29,9 @@ const sections: FooterSectionRessourceProps[] = [
       },
     ]
   }
-]
+] as const;
 
-const links: FooterLinkProps[] = [
+export const links: FooterLinkProps[] = [
   {
     "label": "Privacy Policy",
     "to": "/privacy"
@@ -40,9 +40,9 @@ const links: FooterLinkProps[] = [
     "label": "Terms of Service",
     "to": "/terms"
   }
-]
+] as const;
 
-const icons: FooterIconProps[] = [
+export const icons: FooterIconProps[] = [
   {
     "to": "https://www.facebook.com",
     "icon": <InstagramIcon />
@@ -51,7 +51,7 @@ const icons: FooterIconProps[] = [
     "to": "https://www.twitter.com",
     "icon": <InstagramIcon />
   }
-]
+] as const;
 
 export function Footer() {
 
