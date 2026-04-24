@@ -1,6 +1,8 @@
 import { FooterInfo, type FooterIconProps, type FooterLinkProps } from "./info"
 import { FooterRessource, type FooterSectionRessourceProps } from "./ressource"
 import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import XIcon from '@mui/icons-material/X';
 
 export const sections: FooterSectionRessourceProps[] = [
   {
@@ -45,10 +47,14 @@ export const links: FooterLinkProps[] = [
 export const icons: FooterIconProps[] = [
   {
     "to": "https://www.facebook.com",
-    "icon": <InstagramIcon />
+    "icon": <FacebookIcon />,
   },
   {
     "to": "https://www.twitter.com",
+    "icon": <XIcon />
+  },
+  {
+    "to": "https://www.instagram.com",
     "icon": <InstagramIcon />
   }
 ] as const;
