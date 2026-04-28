@@ -1,0 +1,100 @@
+footer {
+    background-color: var(--c0);
+    position: sticky;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    color: var(--c1);
+    z-index: 2;
+    padding: 2em;
+}
+
+footer a, footer p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+footer a {
+    color: var(--c2);
+}
+
+#footer-infos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5em;
+}
+
+footer #footer-info-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+#footer-ressources a, #footer-info-links a {
+    /* background-color: red; */
+    padding: 0.25em 0.5em;
+    border-radius: 1000px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+#footer-ressources a::before, #footer-info-links a::before {
+    content: "";
+    background-color: #0000;
+    backdrop-filter: invert(100%);
+    border-radius: 1000px;
+    position: absolute;
+    top:   0%;
+    bottom:0%;
+    left: -100%;
+    right: 100%;
+    z-index: 9;
+    transition: 0.25s ease;
+}
+#footer-ressources a:hover::before, #footer-info-links a:hover::before {
+    top: 0px;
+    bottom: 0px;
+    left: 0%;
+    right: 0%;
+}
+#footer-ressources a::after, #footer-info-links a::after {
+    content: "";
+    background-color: var(--c2);
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+}
+#footer-ressources a::selection, #footer-info-links a::selection {
+    background-color: white;
+}
+
+footer #footer-ressources {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(30vw - 10em);
+    margin-bottom: 1em;
+}
+
+footer .footer-ressource {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-ressource-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-ressource-links a {
+    display: block;
+}

@@ -10,4 +10,6 @@ createRoot(document.getElementById('root')!).render(
       <App />
     </HashRouter>
   </StrictMode>,
-)
+);
+
+// the cursed cursor part will go here :)
