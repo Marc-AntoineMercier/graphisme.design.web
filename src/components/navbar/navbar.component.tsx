@@ -1,7 +1,7 @@
 import { Logo } from "@/components";
 import "./navbar.css";
 import { NavbarOption } from "./navbar.option.component";
-import { type OptionProps } from "./option.component";
+import { type OptionProps } from "./options/option.component";
 
 const options: OptionProps[] = [
   {
