@@ -20,7 +20,7 @@ export type FooterInfoIconsProps = {
 
 export function FooterInfoIcons({ icons }: FooterInfoIconsProps) {
   return (
-    <div>
+    <div id="footer-info-icons">
       {icons.map((iconProps, index) => (
         <FooterIcon key={index} {...iconProps} />
       ))}

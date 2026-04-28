@@ -9,7 +9,7 @@ export type FooterInfoProps = {
 
 export function FooterInfo({ icons, links }: FooterInfoProps) {
   return (
-    <div>
+    <div id="footer-infos">
       <FooterInfoIcons icons={icons} />
       <FooterInfoLinks links={links} />
       <FooterCopyright />
