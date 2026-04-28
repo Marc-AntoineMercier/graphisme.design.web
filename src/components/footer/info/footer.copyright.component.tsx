@@ -4,6 +4,6 @@ export function FooterCopyright() {
   const currentYear = getCurrentYear();
   
   return (
-    <p>&copy; {currentYear} My React App. All rights reserved.</p>
+    <p id="copyright">&copy; {currentYear} My React App. All rights reserved.</p>
   )
 }
