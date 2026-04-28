@@ -1,19 +1,6 @@
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Drawer, type DrawerProps } from "@mui/material";
-
-export const useOptions = () => {
-	const [open, setOpen] = useState<boolean>(false);
-
-	const toggleDrawer = (state: boolean) => () => {
-		setOpen(state);
-	}
-
-	return {
-		state: open,
-		close: toggleDrawer(false),
-		open : toggleDrawer(true)
-	}
-}
+import { useOptions } from "@/hook";
 
 export type OptionsAnchor = DrawerProps["anchor"]
 

@@ -1,4 +1,4 @@
-import { Option, type OptionProps } from "./option.component";
+import { Option, type OptionProps } from "./options/option.component";
 import "./navbar.option.css";
 
 export type NavbarOptionProps = {
