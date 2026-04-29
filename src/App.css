@@ -1,0 +1,6 @@
+article {
+    background-color: var(--c1);
+    padding: 2em;
+    z-index: 5;
+    position: relative;
+}

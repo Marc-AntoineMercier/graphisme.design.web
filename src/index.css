@@ -1,15 +1,29 @@
+@font-face {
+    font-family: Lexend;
+    src: url("https://lefredy7476.github.io/Lexend.ttf");
+}
 
 :root {
-    --app-font-size: 16px
-    font-family: 'Fira Code', monospace;
+    --app-font-size: 16px;
+    font-family: Lexend, 'Fira Code', monospace;
     font-size: var(--app-foot-size);
+    --c0: #000;
+    --c1: #fff;
+    --c2: #66fac1;
+    --radius: 8px;
     margin: 0;
     padding: 0;
+}
+
+::selection {
+    background-color: var(--c2);
+    color: var(--c0);
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--c0);
 }
 
 a {

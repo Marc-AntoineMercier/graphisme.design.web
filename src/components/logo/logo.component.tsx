@@ -6,12 +6,11 @@ export type LogoProps = {
 
 export function Logo({ to }: LogoProps) {
   return (
-    <div className="">
+    <Link className="logocontainer" to={to}>
+      <img src="./deceased.png" alt="logo" />
       <h1>
-        <Link to={to}>
-          <img src="toto" alt="logo application" />
-        </Link>
+        The Pirate Graveyard
       </h1>
-    </div>
+    </Link>
   )
 }
