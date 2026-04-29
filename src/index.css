@@ -13,6 +13,11 @@
     --radius: 8px;
     margin: 0;
     padding: 0;
+    cursor: none;
+}
+
+button, input, a {
+    cursor: inherit;
 }
 
 ::selection {
@@ -34,4 +39,19 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+div#cursor {
+    /* height: 100px;
+    width: 100px; */
+    background-color: #0000;
+    position: fixed;
+    z-index: 99;
+    /* top: 100px;
+    left: 100px; */
+    user-select: none;
+    pointer-events: none;
+    border: 4px solid var(--c0);
+    outline: 4px solid var(--c2);
+    border-radius: 1000px;
 }

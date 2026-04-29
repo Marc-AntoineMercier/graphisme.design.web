@@ -8,7 +8,7 @@ export type FooterIconProps = {
 
 export function FooterIcon({ to, icon }: FooterIconProps) {
   return (
-    <Link to={to}>
+    <Link to={to} className="hoverable">
       {icon}
     </Link>
   )
