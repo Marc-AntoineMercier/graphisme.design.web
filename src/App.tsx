@@ -5,7 +5,7 @@ import { Navbar, Footer } from '@/components';
 import { useRef, useState, useEffect } from 'react';
 
 const cursorBaseRadius = 4;
-const cursorHoverRadius = 16;
+const cursorHoverRadius = 32;
 
 export function App() {
   const cursorRef = useRef(null);
@@ -36,7 +36,7 @@ export function App() {
     function frameUpdate() {
       console.log("running");
       if (cursorRef.current != null) {
-        // placeCursor();
+        placeCursor();
       // ignore null bulshit
       }
       requestAnimationFrame(frameUpdate);
