@@ -27,10 +27,30 @@ export function App() {
         cursorRef.current.style.right = (window.innerWidth - rect.right) - cursorRadius + "px";
         cursorRef.current.style.bottom = (window.innerHeight - rect.bottom) - cursorRadius + "px";
       } else if (highlightableElement) {
-        cursorRef.current.style.top = mouse.current.top - cursorHoverRadius + "px";
+        let range;
+        let textNode;
+        let offset;
+        // if (document.caretPositionFromPoint) {
+        //   range = document.caretPositionFromPoint(mouse.current.left, mouse.current.top);
+        //   textNode = range.offsetNode;
+        //   offset = range.offset;
+        // } else 
+        if (document.caretRangeFromPoint) {
+          // Use WebKit-proprietary fallback method
+          range = document.caretRangeFromPoint(mouse.current.left, mouse.current.top);
+          textNode = range.startContainer;
+          offset = range.startOffset;
+        }
+        console.log(range);
+        let rect = range.getClientRects()[0];
+        cursorRef.current.style.top = rect.top - cursorRadius + "px";
+        // cursorRef.current.style.left = rect.left - cursorRadius + "px";
+        // cursorRef.current.style.right = (window.innerWidth - rect.right) - cursorRadius + "px";
+        cursorRef.current.style.bottom = (window.innerHeight - rect.bottom) - cursorRadius + "px";
+        // cursorRef.current.style.top = mouse.current.top - cursorHoverRadius + "px";
         cursorRef.current.style.left = mouse.current.left - cursorRadius + "px";
         cursorRef.current.style.right = mouse.current.right - cursorRadius + "px";
-        cursorRef.current.style.bottom = mouse.current.bottom - cursorHoverRadius + "px";
+        // cursorRef.current.style.bottom = mouse.current.bottom - cursorHoverRadius + "px";
       } else {
         cursorRef.current.style.top = mouse.current.top - cursorRadius + "px";
         cursorRef.current.style.left = mouse.current.left - cursorRadius + "px";
@@ -50,7 +70,7 @@ export function App() {
     });
 
     function frameUpdate() {
-      console.log("running");
+      // console.log("running");
       if (cursorRef.current != null) {
         placeCursor();
       // ignore null bulshit
