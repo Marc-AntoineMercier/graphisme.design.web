@@ -5,7 +5,7 @@ import { Navbar, Footer } from '@/components';
 import { useRef, useState, useEffect } from 'react';
 
 const cursorBaseRadius = 4;
-const cursorHoverRadius = 32;
+const cursorHoverRadius = 12;
 
 export function App() {
   const cursorRef = useRef(null);
@@ -17,12 +17,28 @@ export function App() {
   useEffect(() => {
     function placeCursor() {
       // ignore null bulshit
-      const cursorRadius = document.querySelector(".hoverable:hover") ? cursorHoverRadius : cursorBaseRadius;
-      cursorRef.current.style.top = mouse.current.top - cursorRadius + "px";
-      cursorRef.current.style.left = mouse.current.left - cursorRadius + "px";
-      cursorRef.current.style.right = mouse.current.right - cursorRadius + "px";
-      cursorRef.current.style.bottom = mouse.current.bottom - cursorRadius + "px";
+      let cursorRadius = cursorBaseRadius;
+      const hoveredElement = document.querySelector(".hoverable:hover");
+      const highlightableElement = document.querySelector(".highlightable:hover");
+      if (hoveredElement) {
+        let rect = hoveredElement.getBoundingClientRect();
+        cursorRef.current.style.top = rect.top - cursorRadius + "px";
+        cursorRef.current.style.left = rect.left - cursorRadius + "px";
+        cursorRef.current.style.right = (window.innerWidth - rect.right) - cursorRadius + "px";
+        cursorRef.current.style.bottom = (window.innerHeight - rect.bottom) - cursorRadius + "px";
+      } else if (highlightableElement) {
+        cursorRef.current.style.top = mouse.current.top - cursorHoverRadius + "px";
+        cursorRef.current.style.left = mouse.current.left - cursorRadius + "px";
+        cursorRef.current.style.right = mouse.current.right - cursorRadius + "px";
+        cursorRef.current.style.bottom = mouse.current.bottom - cursorHoverRadius + "px";
+      } else {
+        cursorRef.current.style.top = mouse.current.top - cursorRadius + "px";
+        cursorRef.current.style.left = mouse.current.left - cursorRadius + "px";
+        cursorRef.current.style.right = mouse.current.right - cursorRadius + "px";
+        cursorRef.current.style.bottom = mouse.current.bottom - cursorRadius + "px";
+      }
       cursorRef.current.style.opacity = document.querySelector(":hover") == null ? "0" : "1";
+      
     }
     
     document.querySelector("body")?.addEventListener("mousemove", function (e) {

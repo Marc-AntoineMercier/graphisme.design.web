@@ -3,8 +3,8 @@ export function HomePage() {
 
   return (
     <article>
-      <h1>Home Page</h1>
-      <p>
+      <h1 className="highlightable">Home Page</h1>
+      <p className="highlightable">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper a mauris vitae aliquet. Donec blandit sapien lacus, non blandit odio varius sodales. Nulla risus tortor, porta ac porta in, molestie nec ligula. Sed consectetur risus vel semper elementum. Etiam blandit elit in interdum ultricies. Phasellus aliquet arcu lorem, pellentesque rhoncus mi rhoncus quis. Etiam ultricies, est ac convallis tempor, metus erat vestibulum ante, at cursus risus mi vitae mauris. Maecenas eu auctor tellus. Praesent hendrerit nibh ut massa vulputate dignissim. Curabitur sollicitudin varius elit, facilisis porttitor nibh condimentum id. Mauris et ante mauris.
 
         Proin non diam mattis, laoreet sem ut, condimentum nulla. Proin nunc odio, tincidunt ut ullamcorper a, venenatis eget sapien. Duis eget bibendum dolor, et gravida justo. Morbi a elit bibendum, condimentum augue vel, vestibulum enim. Nulla at hendrerit libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi tristique mi ac accumsan ornare. Aenean nec molestie orci. Donec mollis nunc vitae placerat commodo. Duis at facilisis dolor. Nulla viverra ornare semper. In non urna eget ligula imperdiet vehicula. In maximus at lectus a dapibus.

@@ -46,7 +46,7 @@ div#cursor {
     width: 100px; */
     background-color: #0000;
     position: fixed;
-    z-index: 99;
+    z-index: 9999;
     /* top: 100px;
     left: 100px; */
     user-select: none;
