@@ -8,7 +8,7 @@ export type FooterSectionInfoLinkProps = {
 
 export function FooterSectionInfoLink({ label, url }: FooterSectionInfoLinkProps) {
   return (
-    <Link to={url}>
+    <Link to={url} className="hoverable">
       {label}
     </Link>
   )
@@ -24,7 +24,7 @@ export function FooterSectionRessource({ title, links }: FooterSectionRessourceP
   return (
     <div className="footer-ressource">
       <div className="footer-ressource-header">
-        <h3>{title}</h3>
+        <h3 className="highlightable">{title}</h3>
       </div>
       <div className="footer-ressource-links">
         {links.map((link, index) => (

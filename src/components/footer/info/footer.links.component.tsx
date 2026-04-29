@@ -9,7 +9,7 @@ export type FooterLinkProps = {
 export function FooterInfoLink({ to, label }: FooterLinkProps) {
 
   return (
-    <Link to={to}>
+    <Link to={to} className="hoverable">
       {label}
     </Link>
   )
