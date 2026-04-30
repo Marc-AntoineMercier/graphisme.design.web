@@ -17,15 +17,13 @@ export function GraveyardPage() {
     watch,
     formState: { errors }
   } = useForm<GraveyardFormData>();
-  const graveyardData = useAppStore(state => state.data);
+  const graveyardData = useAppStore(state => state.data.data);
 
   const onSubmit = (data: GraveyardFormData) => {
     console.log(data);
   };
 
   const search = watch("search") || "";
-
-  console.log(graveyardData);
 
   const filteredData = graveyardData.filter(item => item.siteName.toLowerCase().includes(search.toLowerCase()));
 
