@@ -19,17 +19,17 @@ export function Option({ render, anchor = "right" }: OptionProps) {
 
   return (
     <>
-      <button className="hoverable" type={"button"} onClick={open} >
+      <button className="hoverable" type={"button"} onClick={open}>
         {openButton}
       </button>
       <Drawer open={state} onClose={close} anchor={anchor}>
-        <div>
-          <div>
+        <div className="drawer-container">
+          <div className="drawer-container-header">
             <button className="hoverable" type={"button"} onClick={close}>
 							{closeButton}
 						</button>
           </div>
-          <div>
+          <div className="drawer-container-content">
             {content}
           </div>
         </div>

@@ -1,20 +1,18 @@
-import { Logo } from "@/components";
+import { Logo, NavbarOption, type OptionProps, CloseButton, SearchButton, NavigationButton } from "@/components";
 import "./navbar.css";
-import { NavbarOption } from "./navbar.option.component";
-import { type OptionProps } from "./options/option.component";
 
 const options: OptionProps[] = [
   {
     render: {
-      openButton: "Search",
-      closeButton: "Close",
+      openButton: <SearchButton />,
+      closeButton: <CloseButton />,
       content: <></>,
     },
   },
   {
     render: {
-      openButton: "Navigation",
-      closeButton: "Close",
+      openButton: <NavigationButton />,
+      closeButton: <CloseButton />,
       content: <></>,
     }
   },
