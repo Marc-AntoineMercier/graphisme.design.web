@@ -1,11 +1,16 @@
 import { useParams } from "react-router";
 
+/**
+ * Todo:
+ *  - Add more details about the deleted site
+ * @returns 
+ */
 export function DetailGraveyardPage() {
   const { id } = useParams();
 
   return (
-    <>
-        <h1>Detail Graveyard Page</h1>
-    </>
+    <article>
+      <h1>Detail Graveyard Page of Id {id}</h1>
+    </article>
   );
 }

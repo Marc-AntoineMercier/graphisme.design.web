@@ -7,7 +7,7 @@ export type FooterRessourceProps = {
 export function FooterRessource({ sections }: FooterRessourceProps) {
 
   return (
-    <div>
+    <div id="footer-ressources">
       {sections.map((section, index) => (
         <FooterSectionRessource
           key={index} 

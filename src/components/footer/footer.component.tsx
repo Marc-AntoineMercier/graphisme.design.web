@@ -3,6 +3,7 @@ import { FooterRessource, type FooterSectionRessourceProps } from "./ressource"
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
+import "./footer.css";
 
 export const sections: FooterSectionRessourceProps[] = [
   {
@@ -63,7 +64,7 @@ export function Footer() {
 
   return (
     <>
-      <footer>
+      <footer id="footer">
         <FooterRessource sections={sections}/>
         <FooterInfo icons={icons} links={links} />
       </footer>
