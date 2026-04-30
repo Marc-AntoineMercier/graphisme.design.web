@@ -1,15 +1,11 @@
 import { useAppStore } from "@/store";
+import type { DeletedSite } from "@/utils";
 import { useForm } from "react-hook-form";
 
 export type GraveyardFormData = {
   search: string;
 };
 
-/**
- *Todo:
- * - No Description 
- * @returns 
- */
 export function GraveyardPage() {
   const {
     register,
@@ -18,12 +14,11 @@ export function GraveyardPage() {
     formState: { errors }
   } = useForm<GraveyardFormData>();
   const graveyardData = useAppStore(state => state.data.data);
+  const search = watch("search") || "";
 
   const onSubmit = (data: GraveyardFormData) => {
     console.log(data);
   };
-
-  const search = watch("search") || "";
 
   const filteredData = graveyardData.filter(item => item.siteName.toLowerCase().includes(search.toLowerCase()));
 
