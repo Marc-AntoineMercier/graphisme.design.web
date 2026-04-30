@@ -1,8 +1,9 @@
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export function CloseButton() {
   return (
     <>
-      Mettre une icone de fermeture ici
+      <ArrowForwardIosIcon />
     </>
   )
 }
