@@ -1,4 +1,6 @@
-import { Logo, NavbarOption, type OptionProps, CloseButton, SearchButton, NavigationButton } from "@/components";
+import { Logo, NavbarOption, type OptionProps } from "@/components";
+import { CloseButton, NavigationButton, SearchButton } from "@/components/button";
+import { SearchContent, NavigationContent } from "@/components/content";
 import "./navbar.css";
 
 const options: OptionProps[] = [
@@ -6,14 +8,14 @@ const options: OptionProps[] = [
     render: {
       openButton: <SearchButton />,
       closeButton: <CloseButton />,
-      content: <></>,
+      content: <SearchContent />,
     },
   },
   {
     render: {
       openButton: <NavigationButton />,
       closeButton: <CloseButton />,
-      content: <></>,
+      content: <NavigationContent />,
     }
   },
 ];
