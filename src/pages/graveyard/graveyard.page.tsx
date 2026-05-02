@@ -30,28 +30,29 @@ export function GraveyardPage() {
 
   return (
     <article>
-      <div>
-        <h1>Graveyard Page</h1>
+      <div className="header">
+        <h1 className="title">Graveyard Page</h1>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input 
-          type="text" 
-          defaultValue={""} 
-          placeholder={"Search"}
-          {...register("search")} />
-        {errors.search && <span>This field is required</span>}
-      </form>
-      <div>
+      <div className="content">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input 
+            type="text" 
+            defaultValue={""} 
+            placeholder={"Search"}
+            {...register("search")} />
+            {errors.search && <span>This field is required</span>}
+        </form>
         <div>
           Content
           {filteredData.map(item => (
-            <div key={item.id}>
-              <h2>{item.siteName}</h2>
-              <p>{item.description}</p>
-            </div>
-          ))}
+              <div key={item.id}>
+                <h2>{item.siteName}</h2>
+                <p>{item.description}</p>
+              </div>
+            ))}
         </div>
       </div>
+      
     </article>
   );
 }
