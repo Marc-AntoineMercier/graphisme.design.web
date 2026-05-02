@@ -1,5 +1,6 @@
 import { useAppStore } from "@/store";
 import type { DeletedSite } from "@/utils";
+import { Card } from "@/components";
 import { useForm } from "react-hook-form";
 
 export type FilterDataContext = {
@@ -45,10 +46,10 @@ export function GraveyardPage() {
         <div>
           Content
           {filteredData.map(item => (
-              <div key={item.id}>
+              <Card key={item.id}>
                 <h2>{item.siteName}</h2>
                 <p>{item.description}</p>
-              </div>
+              </Card>
             ))}
         </div>
       </div>
