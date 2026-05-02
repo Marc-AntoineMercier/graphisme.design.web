@@ -2,7 +2,7 @@ import { useAppStore } from "@/store";
 import type { DeletedSite } from "@/utils";
 import { useForm } from "react-hook-form";
 
-type FilterDataContext = {
+export type FilterDataContext = {
   search: string;
 }
 
