@@ -86,8 +86,6 @@ export function Cursor() {
             } else {
                 cursorRef.current.style.opacity = "1";
             }
-
-            console.log(last.current);
         }
         
         document.querySelector("body")?.addEventListener("mousemove", function (e) {
