@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
 export type AppStore = {
-  data: DataGraveyard;
+  site: DataGraveyard;
 };
 
 const initialData = data as DataGraveyard;
@@ -13,7 +13,7 @@ const initialData = data as DataGraveyard;
 export const useAppStore = create<AppStore>()(
   persist(
     immer(() => ({
-      data: initialData,
+      site: initialData,
     })),
     {
       name: "app-store",
