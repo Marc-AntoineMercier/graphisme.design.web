@@ -1,25 +1,33 @@
 import { useEffect, useRef } from "react";
 
+type MousePosition = {
+    left: number;
+    top: number;
+    right: number;
+    bottom: number;
+}
+
+type LastMousePosition = {
+    timestamp: number;
+} & MousePosition
+
 const cursorBaseRadius = 4;
 const cursorHoverRadius = 12;
 
 function expFollow(current: number, target: number, deltaTime: number) {
   let diff = target - current;
-  let new_diff = diff * 0.75;//Math.pow( 0.001, deltaTime );
+  let new_diff = diff * 0.75;
   return target - new_diff;
 }
 
 export function Cursor() {
-    const cursorRef = useRef(null);
-    const mouse = useRef({left: 0, top: 0, bottom: 0, right: 0})
-    const last = useRef({left: 0, top: 0, bottom: 0, right: 0, timestamp: -1})
-      // const [mouseX, setmouseX] = useState(0);
-      // const [mouseY, setmouseY] = useState(0);
+    const cursorRef = useRef<HTMLDivElement | null>(null);
+    const mouse = useRef<MousePosition>({left: 0, top: 0, bottom: 0, right: 0})
+    const last = useRef<LastMousePosition>({left: 0, top: 0, bottom: 0, right: 0, timestamp: -1});
     
       
     useEffect(() => {
         function placeCursor() {
-            // ignore null bulshit
             let cursorRadius = cursorBaseRadius;
             const hoveredElement = document.querySelector(".hoverable:hover");
             const highlightableElement = document.querySelector(".highlightable:hover");
@@ -30,23 +38,22 @@ export function Cursor() {
             let left;
 
             if (hoveredElement) {
-            let rect = hoveredElement.getBoundingClientRect();
-            top = rect.top - cursorRadius;
-            left = rect.left - cursorRadius;
-            right = (window.innerWidth - rect.right) - cursorRadius;
-            bottom = (window.innerHeight - rect.bottom) - cursorRadius;
+                let rect = hoveredElement.getBoundingClientRect();
+                top = rect.top - cursorRadius;
+                left = rect.left - cursorRadius;
+                right = (window.innerWidth - rect.right) - cursorRadius;
+                bottom = (window.innerHeight - rect.bottom) - cursorRadius;
             } else if (highlightableElement) {
                 let range = document.caretRangeFromPoint(mouse.current.left, mouse.current.top);
-                // console.log(range);
+
                 let rect = range.getClientRects()[0];
                 top = rect.top - cursorRadius;
-                // left = rect.left - cursorRadius;
-                // right = (window.innerWidth - rect.right) - cursorRadius;
+
                 bottom = (window.innerHeight - rect.bottom) - cursorRadius;
-                // top = mouse.current.top - cursorHoverRadius;
+
                 left = mouse.current.left - cursorRadius;
                 right = mouse.current.right - cursorRadius;
-                // bottom = mouse.current.bottom - cursorHoverRadius;
+
                 if (Math.abs(rect.left - mouse.current.left) > 15) {
                     top = mouse.current.top - cursorRadius;
                     bottom = mouse.current.bottom - cursorRadius;
@@ -58,12 +65,10 @@ export function Cursor() {
                 bottom = mouse.current.bottom - cursorRadius;
             }
             let now = Date.now();
-                //if (last.current.timestamp != -1) {
                 top = expFollow(last.current.top, top, now - last.current.timestamp);
                 bottom = expFollow(last.current.bottom, bottom, now - last.current.timestamp);
                 left = expFollow(last.current.left, left, now - last.current.timestamp);
                 right = expFollow(last.current.right, right, now - last.current.timestamp);
-                //}
 
                 cursorRef.current.style.left = left + "px";
                 cursorRef.current.style.top = top + "px";
@@ -81,7 +86,7 @@ export function Cursor() {
             } else {
                 cursorRef.current.style.opacity = "1";
             }
-            
+
             console.log(last.current);
         }
         
@@ -90,14 +95,11 @@ export function Cursor() {
             mouse.current.top = e.clientY;
             mouse.current.right = window.innerWidth - e.clientX;
             mouse.current.bottom = window.innerHeight - e.clientY;
-            // placeCursor();
         });
 
         function frameUpdate() {
-            // console.log("running");
             if (cursorRef.current != null) {
-            placeCursor();
-            // ignore null bulshit
+                placeCursor();
             }
             requestAnimationFrame(frameUpdate);
         }
