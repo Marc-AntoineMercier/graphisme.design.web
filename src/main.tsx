@@ -12,15 +12,3 @@ createRoot(document.getElementById('root')!).render(
     </HashRouter>
   </StrictMode>,
 );
-
-// the cursed cursor part will go here :)
-
-// const mousePosition = [0,0];
-// const htmlElement = document.querySelector(":root");
-// htmlElement?.addEventListener("mousemove", (event) => {
-//   mousePosition[0] = event.clientX;
-//   mousePosition[1] = event.clientY;
-// })
-
-
-
